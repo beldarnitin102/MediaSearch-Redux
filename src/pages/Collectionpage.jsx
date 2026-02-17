@@ -1,11 +1,22 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
+import CollectionCard from '../components/CollectionCard'
 
-const Collectionpage = () => {
+const CollectionPage = () => {
+
+ const collection = useSelector(state => state.collection.items)
+
   return (
-    <div>
-      nitin
+    <div className="flex flex-wrap gap-6 overflow-auto px-10"> 
+      {collection.map((item,idx) => {
+        return <div key={idx}>
+
+         <CollectionCard item={item}/>
+        </div>
+
+      })}
     </div>
   )
 }
 
-export default Collectionpage
+export default CollectionPage

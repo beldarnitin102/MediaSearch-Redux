@@ -1,20 +1,6 @@
-import React from "react";
-import { useDispatch } from "react-redux";
-import { addCollection, addedToast } from "../redux/features/collectionSlice"
+import React from 'react'
 
-const ResultCard = ({ item }) => {
-
-  const dispatch = useDispatch()
-
-  const addToCollection = (item) => {
-    dispatch(addCollection(item))
-    dispatch(addedToast())
-  }
-
-
-
-
-
+const CollectionCard = (item) => {
   return (
     <div className="w-[15vw] h-full relative bg-white rounded xl overflow-hidden ">
       <a target="_blank" className="h-full" href={item.url}>
@@ -48,7 +34,7 @@ const ResultCard = ({ item }) => {
 
 
         <button onClick={() => {
-          addToCollection(item)
+        
         }}
         
         
@@ -58,7 +44,7 @@ const ResultCard = ({ item }) => {
         </button>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default ResultCard;
+export default CollectionCard
